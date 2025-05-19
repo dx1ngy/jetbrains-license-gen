@@ -262,6 +262,7 @@ int psLength = modulusLength - 3 - encoded.length;
 Arrays.fill(padded, 2, 2 + psLength, (byte) 0xFF);
 padded[2 + psLength] = 0x00;
 System.arraycopy(encoded, 0, padded, 3 + psLength, encoded.length);
+BigInteger c = new BigInteger(1, padded);
 ```
 当然也可以直接用jdk的源码确定c值，跟进上面的那几个方法（getDigestValue，encodeSignature，pad）里看一下如何实现的。
 

@@ -70,7 +70,7 @@ private static boolean isKeyValid(String key) {
 可以推测出用户购买license后，首先根据软件内置的根证书签发一个用户证书（certBase64），再使用用户证书（certBase64）将购买信息（licensePartBase64）签名（signatureBase64），最后将上面的信息组成一个license。
 校验证书过程为当用户输入license后，先解析license成4部分，然后验证用户证书（certBase64）是不是软件内置根证书签发的（就是证书链的验证，通过用户证书的签名信息、签名值、根证书的公钥来验证用户证书是否是根证书签发的），
 最后再校验用户购买信息（licensePartBase64）和签名（signatureBase64）是否一致。   
-证书链验证代码[CheckLicense](https://github.com/JetBrains/marketplace-makemecoffee-plugin/blob/master/src/main/java/com/company/license/CheckLicense.java)
+证书链验证代码
 ```
 private static X509Certificate createCertificate(byte[] certBytes, Collection<byte[]> intermediateCertsBytes, boolean checkValidityAtCurrentDate) throws Exception {
     final CertificateFactory x509factory = CertificateFactory.getInstance("X.509");

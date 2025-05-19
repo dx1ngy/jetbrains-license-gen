@@ -269,6 +269,7 @@ System.arraycopy(encoded, 0, padded, 3 + psLength, encoded.length);
 
 
 ## 参考资料
+https://qiaoin.github.io/2020/06/09/rsa/
 https://www.cnblogs.com/feng9exe/p/8075447.html
 https://zh.wikipedia.org/wiki/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95
 https://zhuanlan.zhihu.com/p/606755714

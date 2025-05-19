@@ -234,7 +234,7 @@ BigInteger m = new BigInteger(1, cert.getSignature());
 BigInteger exp = rootPublicKey.getPublicExponent();
 BigInteger n = rootPublicKey.getModulus();
 ```
-用户证书的签名信息是cert.getTBSCertificate()，摘要（对应上面的getDigestValue()方法）过后是md
+用户证书的签名信息是cert.getTBSCertificate()，摘要（对应上面的getDigestValue()方法）过后是digest
 ```
 MessageDigest md = MessageDigest.getInstance("SHA-256");
 md.update(cert.getTBSCertificate());

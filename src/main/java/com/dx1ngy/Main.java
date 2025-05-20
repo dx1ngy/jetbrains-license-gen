@@ -84,8 +84,8 @@ public class Main {
         byte[] sign = signature.sign();
         String sigResultsBase64 = Base64.getEncoder().encodeToString(sign);
         String certBase64 = Base64.getEncoder().encodeToString(cert.getEncoded());
-        String key = licenseId + "-" + licensePartBase64 + "-" + sigResultsBase64 + "-" + certBase64;
-        System.out.println(key);
+        String license = licenseId + "-" + licensePartBase64 + "-" + sigResultsBase64 + "-" + certBase64;
+        System.out.println(license);
         //4. 生成ja-netfilter配置
         //4.1 读取jetbrains的根证书
         CertificateFactory certFactory = CertificateFactory.getInstance("X.509");

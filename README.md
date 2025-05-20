@@ -146,8 +146,8 @@ signature.update(licensePartBytes);
 byte[] sign = signature.sign();
 String sigResultsBase64 = Base64.getEncoder().encodeToString(sign);
 String certBase64 = Base64.getEncoder().encodeToString(cert.getEncoded());
-String key = licenseId + "-" + licensePartBase64 + "-" + sigResultsBase64 + "-" + certBase64;
-System.out.println(key);
+String license = licenseId + "-" + licensePartBase64 + "-" + sigResultsBase64 + "-" + certBase64;
+System.out.println(license);
 ```
 只生成license是不够的，因为该license是通过自己的证书生成的，我们需要的是通过软件内置的根证书签发的用户证书来生成license，这样才能通过证书链校验，由于无法获取根证书的私钥，所有无法使用根证书签发用户证书，这时就需要使用ja-netfilter的power.jar插件。
 该插件其核心就是hook了BigInteger.oddModPow方法（rsa的核心），通过修改参数和返回值的方式达到证书链验证通过。

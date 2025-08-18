@@ -79,7 +79,7 @@ private static boolean isKeyValid(String key) {
 
 可以推测出用户购买license后，首先根据软件内置的根证书签发一个用户证书（certBase64），再使用用户证书（certBase64）将购买信息（licensePartBase64）签名（signatureBase64），最后将上面的信息组成一个license。
 校验证书过程为当用户输入license后，先解析license成4部分，然后验证用户证书（certBase64）是不是软件内置根证书签发的（就是证书链的验证，通过用户证书的签名信息、签名值、根证书的公钥来验证用户证书是否是根证书签发的），
-最后再校验用户购买信息（licensePartBase64）和签名（signatureBase64）是否一致。   
+最后再校验用户购买信息（licensePartBase64）和签名（signatureBase64）是否一致。
 证书链验证代码
 ```
 private static X509Certificate createCertificate(byte[] certBytes, Collection<byte[]> intermediateCertsBytes, boolean checkValidityAtCurrentDate) throws Exception {
@@ -159,7 +159,7 @@ String certBase64 = Base64.getEncoder().encodeToString(cert.getEncoded());
 String license = licenseId + "-" + licensePartBase64 + "-" + sigResultsBase64 + "-" + certBase64;
 System.out.println(license);
 ```
-只生成license是不够的，因为该license是通过自己的证书生成的，我们需要的是通过软件内置的根证书签发的用户证书来生成license，这样才能通过证书链校验，由于无法获取根证书的私钥，所有无法使用根证书签发用户证书，这时就需要使用ja-netfilter的power.jar插件。
+只生成license是不够的，因为该license是通过自己的证书生成的，我们需要的是通过软件内置的根证书签发的用户证书来生成license，这样才能通过证书链校验，由于无法获取根证书的私钥，所以无法使用根证书签发用户证书，这时就需要使用ja-netfilter的power.jar插件。
 该插件其核心就是hook了BigInteger.oddModPow方法（rsa的核心），通过修改参数和返回值的方式达到证书链验证通过。
 
 sun.security.rsa.RSASignature类中签名方法

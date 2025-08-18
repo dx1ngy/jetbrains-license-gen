@@ -5,7 +5,7 @@
 1. 下载[ja-netfilter](https://gitee.com/ja-netfilter/ja-netfilter/releases/tag/2022.2.0)
 2. 解压ja-netfilter.zip
 3. 进入config文件夹中
-4. 在url.conf中添加
+4. 在url.conf中添加（为了屏蔽远程验证）
 
 ```
 PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action

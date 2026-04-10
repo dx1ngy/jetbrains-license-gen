@@ -33,8 +33,6 @@ EQUAL,61592841072157306377847121530190990224827460159171194327673170395645809417
 6. 找到idea.vmoptions文件添加（该文件不在ja-netfilter中，在idea安装目录下自己找一下），**注意下面的xxx需要换成下载文件解压后的路径**
 
 ```
---add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
---add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 -javaagent:/xxx/ja-netfilter.jar
 ```
 

@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-1. 下载[ja-netfilter](https://gitee.com/ja-netfilter/ja-netfilter/releases)
+1. 下载最新版[ja-netfilter](https://gitee.com/ja-netfilter/ja-netfilter/releases)
 2. 解压ja-netfilter.zip
 3. 进入config文件夹中
 4. 在url.conf中添加（为了屏蔽远程验证）

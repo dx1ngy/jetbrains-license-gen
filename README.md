@@ -8,8 +8,18 @@
 4. 在url.conf中添加（为了屏蔽远程验证）
 
 ```
+[URL]
+PREFIX,https://check-license.squaretest.com
 PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action
+PREFIX,https://account.jetbrains.com/lservice/rpc/validateLicense.action
+PREFIX,https://account.jetbrains.com/lservice/rpc/obtainAgreement.action
+PREFIX,https://account.jetbrains.com/lservice/rpc/obtainLicense.action
+
 PREFIX,https://account.jetbrains.com.cn/lservice/rpc/validateKey.action
+PREFIX,https://account.jetbrains.com.cn/lservice/rpc/validateLicense.action
+PREFIX,https://account.jetbrains.com.cn/lservice/rpc/obtainAgreement.action
+PREFIX,https://account.jetbrains.com.cn/lservice/rpc/obtainLicense.action
+KEYWORD,116.62.33.138
 ```
 
 5. 在power.conf中result标签下添加

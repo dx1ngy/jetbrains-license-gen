@@ -1,5 +1,7 @@
 # jetbrains全家桶license生成工具
 
+支持最新版本2026.1
+
 ## 使用方法
 
 1. 下载[ja-netfilter](https://gitee.com/ja-netfilter/ja-netfilter/releases/tag/2022.2.0)
